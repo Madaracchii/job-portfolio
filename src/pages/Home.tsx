@@ -3,6 +3,7 @@ import Navigation from "@/components/Navigation";
 import { BentoGrid, BentoGridItem } from "@/components/BentoGrid";
 import ProjectCard from "@/components/ProjectCard";
 import Timeline from "@/components/Timeline";
+import ScrollAnimation from "@/components/ScrollAnimation";
 
 const Home = () => {
   const projects = [
@@ -98,112 +99,138 @@ const Home = () => {
 
       {/* Home Section */}
       <section id="home" className="pt-20 pb-10 px-4 max-w-7xl mx-auto">
-        <header className="text-center mb-12 mt-8">
-          <h1 className="text-4xl font-bold text-portfolio-dark mb-4">
-            Hi, I'm Andraei Lo
-          </h1>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            I am an aspiring developer.
-          </p>
-        </header>
-
-        <BentoGrid className="max-w-7xl mx-auto gap-6">
-          {/* Overview */}
-          <BentoGridItem
-            title="About Me"
-            className="bento-grid-item bg-white col-span-2 row-span-2"
-          >
-            <div className="space-y-4">
-              <p className="text-gray-600">--------------------------.</p>
-              <p className="text-gray-600">------------------</p>
+        <ScrollAnimation>
+          <div className="flex flex-col md:flex-row items-center justify-between gap-8 mb-16 mt-8">
+            <div className="text-left">
+              <h1 className="text-4xl font-bold text-portfolio-dark mb-4">
+                Hi, I'm John Doe
+              </h1>
+              <p className="text-xl text-gray-600 max-w-2xl">
+                Full-stack developer passionate about creating beautiful and
+                functional web applications.
+              </p>
             </div>
-          </BentoGridItem>
-
-          {/* Education */}
-          <BentoGridItem
-            title="Education"
-            icon={<School className="h-6 w-6" />}
-            className="bento-grid-item bg-white"
-          >
-            <div className="space-y-3">
-              <div>
-                <h3 className="font-medium">Bachelor of Computer Science</h3>
-                <p className="text-sm text-gray-500">LSPU, 2020-2024</p>
-              </div>
+            <div className="w-48 h-48 rounded-full overflow-hidden border-4 border-portfolio-primary shrink-0">
+              <img
+                src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&w=300&h=300&q=80"
+                alt="John Doe"
+                className="w-full h-full object-cover"
+              />
             </div>
-          </BentoGridItem>
+          </div>
+        </ScrollAnimation>
+        <div className="grid grid-cols-1 gap-6">
+          {/* About Me - Full Width */}
+          <ScrollAnimation delay="short">
+            <BentoGridItem title="About Me" className="bg-white col-span-1">
+              <div className="space-y-4">
+                <p className="text-gray-600">
+                  I'm a full-stack developer with 5+ years of experience
+                  building web applications. I specialize in React, Node.js, and
+                  modern JavaScript frameworks. I'm passionate about creating
+                  clean, efficient, and user-friendly applications.
+                </p>
+                <p className="text-gray-600">
+                  When I'm not coding, you can find me hiking, reading, or
+                  experimenting with new technologies. I believe in continuous
+                  learning and regularly attend tech conferences and workshops.
+                </p>
+              </div>
+            </BentoGridItem>
+          </ScrollAnimation>
 
-          {/* Profile Picture */}
-          <BentoGridItem
-            title="Andraei Lo"
-            description="Front-End Developer"
-            className="bento-grid-item bg-white row-span-2"
-          >
-            <div className="flex justify-center items-center h-full">
-              <div className="w-48 h-48 rounded-full overflow-hidden border-4 border-portfolio-primary">
-                <img
-                  src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&w=300&h=300&q=80"
-                  alt="Andraei Lo"
-                  className="w-full h-full object-cover"
-                />
-              </div>
-            </div>
-          </BentoGridItem>
+          {/* Education and Skills side by side */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <ScrollAnimation delay="medium">
+              <BentoGridItem
+                title="Education"
+                icon={<School className="h-6 w-6" />}
+                className="bg-white h-full"
+              >
+                <div className="space-y-3">
+                  <div>
+                    <h3 className="font-medium">Master of Computer Science</h3>
+                    <p className="text-sm text-gray-500">
+                      Stanford University, 2018-2020
+                    </p>
+                  </div>
+                  <div>
+                    <h3 className="font-medium">
+                      Bachelor of Computer Science
+                    </h3>
+                    <p className="text-sm text-gray-500">MIT, 2014-2018</p>
+                  </div>
+                </div>
+              </BentoGridItem>
+            </ScrollAnimation>
 
-          {/* Programming Languages */}
-          <BentoGridItem
-            title="Skills & Languages"
-            icon={<Code className="h-6 w-6" />}
-            className="bento-grid-item bg-white col-span-2"
-          >
-            <div className="grid grid-cols-2 gap-4">
-              <div>
-                <h3 className="font-medium mb-2">Frontend</h3>
-                <ul className="space-y-1 text-sm text-gray-600">
-                  <li>React.js</li>
-                  <li>TypeScript</li>
-                  <li>Tailwind CSS</li>
-                  <li>Next.js</li>
-                </ul>
-              </div>
-              <div>
-                <h3 className="font-medium mb-2">Backend</h3>
-                <ul className="space-y-1 text-sm text-gray-600">
-                  <li>Node.js</li>
-                  <li>Express</li>
-                  <li>PostgreSQL</li>
-                  <li>MongoDB</li>
-                </ul>
-              </div>
-            </div>
-          </BentoGridItem>
-        </BentoGrid>
+            <ScrollAnimation delay="long">
+              <BentoGridItem
+                title="Skills & Languages"
+                icon={<Code className="h-6 w-6" />}
+                className="bg-white h-full"
+              >
+                <div className="grid grid-cols-2 gap-4">
+                  <div>
+                    <h3 className="font-medium mb-2">Frontend</h3>
+                    <ul className="space-y-1 text-sm text-gray-600">
+                      <li>React.js</li>
+                      <li>TypeScript</li>
+                      <li>Tailwind CSS</li>
+                      <li>Next.js</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h3 className="font-medium mb-2">Backend</h3>
+                    <ul className="space-y-1 text-sm text-gray-600">
+                      <li>Node.js</li>
+                      <li>Express</li>
+                      <li>PostgreSQL</li>
+                      <li>MongoDB</li>
+                    </ul>
+                  </div>
+                </div>
+              </BentoGridItem>
+            </ScrollAnimation>
+          </div>
+        </div>{" "}
       </section>
 
       {/* Projects Section */}
       <section id="projects" className="py-20 px-4 bg-gray-100">
         <div className="max-w-7xl mx-auto">
-          <header className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-portfolio-dark mb-4">
-              My Projects
-            </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Here's a selection of projects I've worked on. Each demonstrates
-              different skills and technologies.
-            </p>
-          </header>
-
+          <ScrollAnimation>
+            <header className="text-center mb-12">
+              <h2 className="text-4xl font-bold text-portfolio-dark mb-4">
+                My Projects
+              </h2>
+              <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+                Here's a selection of projects I've worked on. Each demonstrates
+                different skills and technologies.
+              </p>
+            </header>
+          </ScrollAnimation>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {projects.map((project) => (
-              <ProjectCard
+            {projects.map((project, index) => (
+              <ScrollAnimation
                 key={project.id}
-                title={project.title}
-                description={project.description}
-                tags={project.tags}
-                image={project.image}
-                link={project.link}
-                variant={project.featured ? "featured" : "default"}
-              />
+                delay={
+                  index % 3 === 0
+                    ? "none"
+                    : index % 3 === 1
+                    ? "short"
+                    : "medium"
+                }
+              >
+                <ProjectCard
+                  title={project.title}
+                  description={project.description}
+                  tags={project.tags}
+                  image={project.image}
+                  link={project.link}
+                  variant={project.featured ? "featured" : "default"}
+                />
+              </ScrollAnimation>
             ))}
           </div>
         </div>
@@ -212,17 +239,21 @@ const Home = () => {
       {/* Work History Section */}
       <section id="work-history" className="py-20 px-4">
         <div className="max-w-7xl mx-auto">
-          <header className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-portfolio-dark mb-4">
-              Work History
-            </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              My professional journey and experience in the technology industry.
-            </p>
-          </header>
-
+          <ScrollAnimation>
+            <header className="text-center mb-12">
+              <h2 className="text-4xl font-bold text-portfolio-dark mb-4">
+                Work History
+              </h2>
+              <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+                My professional journey and experience in the technology
+                industry.
+              </p>
+            </header>
+          </ScrollAnimation>
           <div className="relative max-w-5xl mx-auto">
-            <Timeline items={workExperience} />
+            <ScrollAnimation delay="medium">
+              <Timeline items={workExperience} />
+            </ScrollAnimation>{" "}
           </div>
         </div>
       </section>

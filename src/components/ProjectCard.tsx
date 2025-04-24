@@ -30,61 +30,71 @@ const ProjectCard = ({
   variant = "default",
 }: ProjectCardProps) => {
   return (
-    <Card
+    <div
       className={cn(
-        "overflow-hidden transition-all duration-200 hover:shadow-lg",
-        variant === "featured" ? "border-portfolio-primary" : "",
+        "group relative rounded-[20px] p-[1px] transition-all duration-300",
+        "bg-gradient-to-br from-[#00ff75] to-[#3700ff]",
+        "hover:shadow-[0_0_30px_1px_rgba(0,255,117,0.30)]",
         className
       )}
     >
-      {image && (
-        <div className="aspect-video w-full overflow-hidden">
-          <img
-            src={image}
-            alt={title}
-            className="h-full w-full object-cover transition-all hover:scale-105 duration-500"
-          />
-        </div>
-      )}
-      <CardHeader>
-        <div className="flex items-center justify-between">
-          <CardTitle className="text-xl font-bold">{title}</CardTitle>
-          {variant === "featured" && (
-            <Badge
-              variant="secondary"
-              className="bg-portfolio-primary text-white"
+      <Card
+        className={cn(
+          "relative h-full rounded-[20px] bg-white dark:bg-zinc-900",
+          "transition-all duration-200 group-hover:scale-[0.98]",
+          "overflow-hidden",
+          variant === "featured" ? "border-portfolio-primary" : ""
+        )}
+      >
+        {image && (
+          <div className="aspect-video w-full overflow-hidden">
+            <img
+              src={image}
+              alt={title}
+              className="h-full w-full object-cover transition-all duration-500 group-hover:scale-105"
+            />
+          </div>
+        )}
+        <CardHeader className="p-4">
+          <div className="flex items-center justify-between">
+            <CardTitle className="text-lg font-bold">{title}</CardTitle>
+            {variant === "featured" && (
+              <Badge
+                variant="secondary"
+                className="bg-portfolio-primary text-white"
+              >
+                Featured
+              </Badge>
+            )}
+          </div>
+          <CardDescription className="line-clamp-2 text-sm text-muted-foreground">
+            {description}
+          </CardDescription>
+        </CardHeader>
+        <CardContent className="p-4 pt-0">
+          <div className="flex flex-wrap gap-1 mt-2">
+            {tags.map((tag, index) => (
+              <Badge key={index} variant="outline" className="text-xs">
+                {tag}
+              </Badge>
+            ))}
+          </div>
+        </CardContent>
+        {link && (
+          <CardFooter className="border-t bg-muted/50 p-3">
+            <Button
+              asChild
+              variant="ghost"
+              className="w-full text-sm text-portfolio-primary hover:text-portfolio-secondary hover:bg-muted"
             >
-              Featured
-            </Badge>
-          )}
-        </div>
-        <CardDescription className="line-clamp-2 text-muted-foreground">
-          {description}
-        </CardDescription>
-      </CardHeader>
-      <CardContent>
-        <div className="flex flex-wrap gap-2 mt-2">
-          {tags.map((tag, index) => (
-            <Badge key={index} variant="outline" className="bg-muted text-xs">
-              {tag}
-            </Badge>
-          ))}
-        </div>
-      </CardContent>
-      {link && (
-        <CardFooter className="border-t bg-muted/50 px-6 py-4">
-          <Button
-            asChild
-            variant="ghost"
-            className="text-portfolio-primary hover:text-portfolio-secondary hover:bg-muted"
-          >
-            <a href={link} target="_blank" rel="noopener noreferrer">
-              View Project
-            </a>
-          </Button>
-        </CardFooter>
-      )}
-    </Card>
+              <a href={link} target="_blank" rel="noopener noreferrer">
+                View Project
+              </a>
+            </Button>
+          </CardFooter>
+        )}
+      </Card>
+    </div>
   );
 };
 
