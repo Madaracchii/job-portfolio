@@ -19,8 +19,6 @@ const ScrollAnimation = ({
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             entry.target.classList.add("appear");
-          } else {
-            entry.target.classList.remove("appear");
           }
         });
       },

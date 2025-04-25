@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
-import { X, Mail, Github, Linkedin, Send } from "lucide-react";
+import { X, Mail, Github, Linkedin, Phone } from "lucide-react";
 import { cn } from "@/lib/utils";
 interface ContactModalProps {
   isOpen: boolean;
@@ -31,14 +31,14 @@ const ContactModal = ({ isOpen, onClose }: ContactModalProps) => {
     <div
       className={cn(
         "fixed inset-0 z-50 flex items-center justify-center p-4 bg-black bg-opacity-50 transition-all duration-500",
-        isOpen ? "opacity-100 translate-y-0" : "opacity-0 translate-y-full"
+        isOpen ? "opacity-100" : "opacity-0"
       )}
       onClick={onClose}
     >
       <div
         className={cn(
           "bg-white rounded-lg shadow-xl max-w-md w-full p-6 transition-all duration-500 transform",
-          isOpen ? "scale-100 translate-y-0" : "scale-95 translate-y-8"
+          isOpen ? "translate-y-0 scale-100" : "translate-y-full scale-95"
         )}
         onClick={(e) => e.stopPropagation()}
       >
@@ -83,6 +83,15 @@ const ContactModal = ({ isOpen, onClose }: ContactModalProps) => {
               <p className="font-medium">@johndoe</p>
             </div>
           </a>
+          <div className="flex items-center space-x-3 p-3 rounded-lg">
+            <div className="bg-portfolio-primary bg-opacity-10 p-3 rounded-full">
+              <Phone className="h-5 w-5 text-portfolio-primary" />
+            </div>
+            <div>
+              <p className="text-sm text-gray-500">Phone</p>
+              <p className="font-medium">+1 234 567 8900</p>
+            </div>
+          </div>
           <div className="flex items-center space-x-3 p-3 rounded-lg">
             <div className="bg-portfolio-primary bg-opacity-10 p-3 rounded-full">
               <Mail className="h-5 w-5 text-portfolio-primary" />
