@@ -1,5 +1,6 @@
 import Navigation from "@/components/Navigation";
 import Timeline from "@/components/Timeline";
+import Footer from "@/components/Footer";
 
 const WorkHistory = () => {
   const workExperience = [
@@ -51,9 +52,13 @@ const WorkHistory = () => {
         </header>
 
         <div className="relative max-w-5xl mx-auto">
-          <Timeline items={workExperience} />
+          <Timeline
+            items={workExperience}
+            dateColor="text-portfolio-secondary font-bold"
+          />
         </div>
       </div>
+      <Footer />
     </div>
   );
 };

@@ -32,7 +32,7 @@ const ProjectCard = ({
   return (
     <div
       className={cn(
-        "group relative rounded-[20px] p-[1px] transition-all duration-300",
+        "group relative rounded-[20px] p-[1px] transition-all duration-300 h-full",
         "hover:bg-gradient-to-br hover:from-[#00ff75] hover:to-[#3700ff]",
         "hover:shadow-[0_0_30px_1px_rgba(0,255,117,0.30)]",
         className

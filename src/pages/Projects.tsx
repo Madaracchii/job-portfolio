@@ -1,5 +1,7 @@
 import Navigation from "@/components/Navigation";
 import ProjectCard from "@/components/ProjectCard";
+import Footer from "@/components/Footer";
+import ScrollAnimation from "@/components/ScrollAnimation";
 
 const Projects = () => {
   const projects = [
@@ -68,17 +70,23 @@ const Projects = () => {
           </p>
         </header>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {projects.map((project) => (
-            <ProjectCard
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {projects.map((project, index) => (
+            <ScrollAnimation
               key={project.id}
-              title={project.title}
-              description={project.description}
-              tags={project.tags}
-              image={project.image}
-              link={project.link}
-              variant={project.featured ? "featured" : "default"}
-            />
+              delay={
+                index % 3 === 0 ? "none" : index % 3 === 1 ? "short" : "medium"
+              }
+            >
+              <ProjectCard
+                title={project.title}
+                description={project.description}
+                tags={project.tags}
+                image={project.image}
+                link={project.link}
+                variant={project.featured ? "featured" : "default"}
+              />
+            </ScrollAnimation>
           ))}
         </div>
       </div>
