@@ -5,16 +5,6 @@ const Footer = () => {
     <footer className="bg-gray-900 text-white py-12">
       <div className="max-w-7xl mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {/* About Section */}
-          <div>
-            <h3 className="text-xl font-bold mb-4">About Me</h3>
-            <p className="text-gray-300 mb-4">
-              A passionate full-stack developer with a focus on creating
-              beautiful, functional, and user-friendly applications.
-            </p>
-          </div>
-
-          {/* Quick Links */}
           <div>
             <h3 className="text-xl font-bold mb-4">Quick Links</h3>
             <ul className="space-y-2">

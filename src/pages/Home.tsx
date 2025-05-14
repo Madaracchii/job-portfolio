@@ -60,11 +60,10 @@ const Home = () => {
           <div className="flex flex-col md:flex-row items-center justify-between gap-8 mb-16 mt-8">
             <div className="text-left">
               <h1 className="text-4xl font-bold text-portfolio-dark mb-4">
-                Hi, I'm John Doe
+                Hi, I'm Andraei!
               </h1>
               <p className="text-xl text-gray-600 max-w-2xl">
-                Full-stack developer passionate about creating beautiful and
-                functional web applications.
+                I am an aspiring developer that wants to turn ideas into code.
               </p>
             </div>
             <div className="w-48 h-48 rounded-full overflow-hidden border-4 border-portfolio-primary shrink-0">
@@ -86,14 +85,13 @@ const Home = () => {
             >
               <div className="space-y-3">
                 <div>
-                  <h3 className="font-medium">Master of Computer Science</h3>
+                  <h3 className="font-medium">
+                    Bachelor of Science in Computer Science
+                  </h3>
                   <p className="text-sm text-gray-500">
-                    Stanford University, 2018-2020
+                    Laguna State Polytechnic University - Santa Cruz Campus,
+                    2020-2024
                   </p>
-                </div>
-                <div>
-                  <h3 className="font-medium">Bachelor of Computer Science</h3>
-                  <p className="text-sm text-gray-500">MIT, 2014-2018</p>
                 </div>
               </div>
             </BentoGridItem>
@@ -110,15 +108,15 @@ const Home = () => {
                   <h3 className="font-medium mb-2">Frontend</h3>
                   <ul className="space-y-1 text-sm text-gray-600">
                     <li>React.js</li>
-                    <li>TypeScript</li>
-                    <li>Tailwind CSS</li>
-                    <li>Next.js</li>
+                    <li>Python</li>
+                    <li>HTML</li>
+                    <li>CSS</li>
                   </ul>
                 </div>
                 <div>
                   <h3 className="font-medium mb-2">Backend</h3>
                   <ul className="space-y-1 text-sm text-gray-600">
-                    <li>Node.js</li>
+                    <li>Python</li>
                     <li>Express</li>
                     <li>PostgreSQL</li>
                     <li>MongoDB</li>
@@ -128,7 +126,6 @@ const Home = () => {
             </BentoGridItem>
           </ScrollAnimation>
         </div>
-
         <section id="about-me" className="py-10 px-4">
           <div className="max-w-7xl mx-auto">
             <ScrollAnimation delay="short">
@@ -138,23 +135,14 @@ const Home = () => {
                     About Me
                   </h2>
                   <p className="text-gray-600">
-                    I'm a full-stack developer with 5+ years of experience
-                    building web applications. I specialize in React, Node.js,
-                    and modern JavaScript frameworks. I'm passionate about
-                    creating clean, efficient, and user-friendly applications.
-                  </p>
-                  <p className="text-gray-600">
-                    When I'm not coding, you can find me hiking, reading, or
-                    experimenting with new technologies. I believe in continuous
-                    learning and regularly attend tech conferences and
-                    workshops.
-                  </p>
-                  <p className="text-gray-600">
-                    My approach to development focuses on writing maintainable
-                    code, adhering to best practices, and staying updated with
-                    the latest industry trends. I enjoy collaborating with teams
-                    to solve complex problems and deliver exceptional user
-                    experiences.
+                    Hey there! I'm Andraei, a recent Computer Science grad from
+                    LSPU with a serious passion for turning ideas into code. I
+                    get a kick out of building things, whether it's dabbling in
+                    AI projects (like that emotion recognition gig) or crafting
+                    web apps with React and Python. Currently at Foundever, I'm
+                    sharpening my problem-solving skills daily, and I'm always
+                    eager to dive into new tech and build the next cool thing.
+                    Let's connect!
                   </p>
                 </div>
               </BentoGridItem>
