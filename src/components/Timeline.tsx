@@ -1,6 +1,6 @@
 import { cn } from "@/lib/utils";
-import ScrollAnimation from "./ScrollAnimation";
 import { Building, Calendar } from "lucide-react";
+import ScrollAnimation from "./ScrollAnimation";
 
 export interface TimelineItem {
   id: number;
@@ -19,12 +19,13 @@ interface TimelineProps {
 const Timeline = ({
   items,
   className,
-  dateColor = "text-portfolio-secondary",
+  dateColor = "text-portfolio-primary",
 }: TimelineProps) => {
   return (
     <div className={cn("relative py-10", className)}>
       {/* Vertical line */}
       <div className="absolute left-0 md:left-1/2 top-0 bottom-0 w-1 bg-gradient-to-b from-portfolio-primary via-portfolio-secondary to-portfolio-primary transform -translate-x-1/2 rounded-full"></div>
+
       {items.map((item, index) => (
         <ScrollAnimation
           key={item.id}
@@ -60,6 +61,7 @@ const Timeline = ({
                 </div>
               </div>
             </div>
+
             {/* Content section - will switch sides */}
             <div
               className={cn(
@@ -82,7 +84,7 @@ const Timeline = ({
                 {item.role}
               </h4>
               <p className="text-gray-600">{item.description}</p>
-            </div>{" "}
+            </div>
           </div>
         </ScrollAnimation>
       ))}

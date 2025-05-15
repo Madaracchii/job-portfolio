@@ -10,12 +10,12 @@ const Home = () => {
   const projects = [
     {
       id: 1,
-      title: "Emotion Recognition using Computer Vision (EfnetB0)",
+      title: "E-Commerce Platform",
       description:
-        "AI model that runs with EfficientNet B0 model that can detect 7 basic human emotions.",
+        "A full-stack e-commerce platform built with React, Node.js, and MongoDB. Features include user authentication, product listing, cart management, and payment processing.",
       image:
         "https://images.unsplash.com/photo-1649972904349-6e44c42644a7?auto=format&fit=crop&w=800&q=80",
-      tags: ["Python"],
+      tags: ["React", "Node.js", "MongoDB", "Stripe"],
       link: "#",
       featured: true,
     },
@@ -39,34 +39,79 @@ const Home = () => {
       tags: ["JavaScript", "API Integration", "CSS"],
       link: "#",
     },
+    {
+      id: 4,
+      title: "Portfolio Website",
+      description:
+        "A personal portfolio website built with React and Tailwind CSS to showcase projects and skills.",
+      image:
+        "https://images.unsplash.com/photo-1483058712412-4245e9b90334?auto=format&fit=crop&w=800&q=80",
+      tags: ["React", "Tailwind CSS", "Responsive Design"],
+      link: "#",
+    },
+    {
+      id: 5,
+      title: "Blog Platform",
+      description:
+        "A full-featured blog platform with a rich text editor, image uploads, comments, and user authentication.",
+      tags: ["Next.js", "PostgreSQL", "AWS S3"],
+      link: "#",
+    },
   ];
 
   const workExperience = [
     {
       id: 1,
-      title: "Foundever",
-      role: "Technical Agent Specialist",
-      date: "2024 - Present",
-      description: "--------------",
+      title: "Google",
+      role: "Senior Frontend Engineer",
+      date: "2020 - Present",
+      description:
+        "Lead development of core components for Google Cloud Platform's web console. Improved performance by 40% and implemented key accessibility features.",
+    },
+    {
+      id: 2,
+      title: "Facebook",
+      role: "Software Engineer",
+      date: "2018 - 2020",
+      description:
+        "Developed and maintained React components for Facebook's Ads Manager. Collaborated with UX designers to implement new features and improve user experience.",
+    },
+    {
+      id: 3,
+      title: "Amazon",
+      role: "Full Stack Developer",
+      date: "2016 - 2018",
+      description:
+        "Built and maintained microservices for Amazon's internal tools. Worked with AWS Lambda, DynamoDB, and Node.js to create scalable solutions.",
+    },
+    {
+      id: 4,
+      title: "Microsoft",
+      role: "Junior Developer",
+      date: "2014 - 2016",
+      description:
+        "Started career working on Microsoft's developer tools. Contributed to Visual Studio Code extensions and internal testing frameworks.",
     },
   ];
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-white">
       <Navigation />
 
+      {/* Home Section */}
       <section id="home" className="pt-20 pb-10 px-4 max-w-7xl mx-auto">
         <ScrollAnimation>
           <div className="flex flex-col md:flex-row items-center justify-between gap-8 mb-16 mt-8">
             <div className="text-left">
-              <h1 className="text-4xl font-bold text-portfolio-dark mb-4">
-                Hi, I'm Andraei!
+              <h1 className="text-4xl font-bold text-portfolio-dark dark:text-white mb-4">
+                Hi, I'm John Doe
               </h1>
-              <p className="text-xl text-gray-600 max-w-2xl">
-                I am an aspiring developer that wants to turn ideas into code.
+              <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl">
+                Full-stack developer passionate about creating beautiful and
+                functional web applications.
               </p>
             </div>
-            <div className="w-48 h-48 rounded-full overflow-hidden border-4 border-portfolio-primary shrink-0">
+            <div className="w-48 h-48 rounded-full overflow-hidden border-4 border-portfolio-primary dark:border-portfolio-secondary shrink-0">
               <img
                 src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&w=300&h=300&q=80"
                 alt="John Doe"
@@ -76,21 +121,29 @@ const Home = () => {
           </div>
         </ScrollAnimation>
 
+        {/* Education and Skills side by side */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
           <ScrollAnimation delay="medium">
             <BentoGridItem
               title="Education"
               icon={<School className="h-6 w-6" />}
-              className="bg-white h-full"
+              className="bg-white dark:bg-gray-800 h-full"
             >
               <div className="space-y-3">
                 <div>
-                  <h3 className="font-medium">
-                    Bachelor of Science in Computer Science
+                  <h3 className="font-medium dark:text-white">
+                    Master of Computer Science
                   </h3>
-                  <p className="text-sm text-gray-500">
-                    Laguna State Polytechnic University - Santa Cruz Campus,
-                    2020-2024
+                  <p className="text-sm text-gray-500 dark:text-gray-400">
+                    Stanford University, 2018-2020
+                  </p>
+                </div>
+                <div>
+                  <h3 className="font-medium dark:text-white">
+                    Bachelor of Computer Science
+                  </h3>
+                  <p className="text-sm text-gray-500 dark:text-gray-400">
+                    MIT, 2014-2018
                   </p>
                 </div>
               </div>
@@ -101,22 +154,22 @@ const Home = () => {
             <BentoGridItem
               title="Skills & Languages"
               icon={<Code className="h-6 w-6" />}
-              className="bg-white h-full"
+              className="bg-white dark:bg-gray-800 h-full"
             >
               <div className="grid grid-cols-2 gap-4">
                 <div>
-                  <h3 className="font-medium mb-2">Frontend</h3>
-                  <ul className="space-y-1 text-sm text-gray-600">
+                  <h3 className="font-medium mb-2 dark:text-white">Frontend</h3>
+                  <ul className="space-y-1 text-sm text-gray-600 dark:text-gray-300">
                     <li>React.js</li>
-                    <li>Python</li>
-                    <li>HTML</li>
-                    <li>CSS</li>
+                    <li>TypeScript</li>
+                    <li>Tailwind CSS</li>
+                    <li>Next.js</li>
                   </ul>
                 </div>
                 <div>
-                  <h3 className="font-medium mb-2">Backend</h3>
-                  <ul className="space-y-1 text-sm text-gray-600">
-                    <li>Python</li>
+                  <h3 className="font-medium mb-2 dark:text-white">Backend</h3>
+                  <ul className="space-y-1 text-sm text-gray-600 dark:text-gray-300">
+                    <li>Node.js</li>
                     <li>Express</li>
                     <li>PostgreSQL</li>
                     <li>MongoDB</li>
@@ -126,23 +179,43 @@ const Home = () => {
             </BentoGridItem>
           </ScrollAnimation>
         </div>
+
+        {/* About Me Section - Moved right after Education and Skills */}
         <section id="about-me" className="py-10 px-4">
           <div className="max-w-7xl mx-auto">
+            <ScrollAnimation>
+              <header className="text-center mb-12">
+                <h2 className="text-4xl font-bold text-portfolio-dark dark:text-white mb-4">
+                  About Me
+                </h2>
+                <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+                  Learn more about who I am and what drives my passion for
+                  development.
+                </p>
+              </header>
+            </ScrollAnimation>
+
             <ScrollAnimation delay="short">
-              <BentoGridItem title="" className="bg-white">
+              <BentoGridItem title="" className="bg-white dark:bg-gray-800">
                 <div className="space-y-4 p-2">
-                  <h2 className="text-4xl font-bold text-portfolio-dark mb-4">
-                    About Me
-                  </h2>
-                  <p className="text-gray-600">
-                    Hey there! I'm Andraei, a recent Computer Science grad from
-                    LSPU with a serious passion for turning ideas into code. I
-                    get a kick out of building things, whether it's dabbling in
-                    AI projects (like that emotion recognition gig) or crafting
-                    web apps with React and Python. Currently at Foundever, I'm
-                    sharpening my problem-solving skills daily, and I'm always
-                    eager to dive into new tech and build the next cool thing.
-                    Let's connect!
+                  <p className="text-gray-600 dark:text-gray-300">
+                    I'm a full-stack developer with 5+ years of experience
+                    building web applications. I specialize in React, Node.js,
+                    and modern JavaScript frameworks. I'm passionate about
+                    creating clean, efficient, and user-friendly applications.
+                  </p>
+                  <p className="text-gray-600 dark:text-gray-300">
+                    When I'm not coding, you can find me hiking, reading, or
+                    experimenting with new technologies. I believe in continuous
+                    learning and regularly attend tech conferences and
+                    workshops.
+                  </p>
+                  <p className="text-gray-600 dark:text-gray-300">
+                    My approach to development focuses on writing maintainable
+                    code, adhering to best practices, and staying updated with
+                    the latest industry trends. I enjoy collaborating with teams
+                    to solve complex problems and deliver exceptional user
+                    experiences.
                   </p>
                 </div>
               </BentoGridItem>
@@ -152,19 +225,23 @@ const Home = () => {
       </section>
 
       {/* Projects Section */}
-      <section id="projects" className="py-20 px-4 bg-gray-100">
+      <section
+        id="projects"
+        className="py-20 px-4 bg-gray-100 dark:bg-gray-800"
+      >
         <div className="max-w-7xl mx-auto">
           <ScrollAnimation>
             <header className="text-center mb-12">
-              <h2 className="text-4xl font-bold text-portfolio-dark mb-4">
+              <h2 className="text-4xl font-bold text-portfolio-dark dark:text-white mb-4">
                 My Projects
               </h2>
-              <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+              <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
                 Here's a selection of projects I've worked on. Each demonstrates
                 different skills and technologies.
               </p>
             </header>
           </ScrollAnimation>
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {projects.map((project, index) => (
               <ScrollAnimation
@@ -192,24 +269,27 @@ const Home = () => {
       </section>
 
       {/* Work History Section */}
-      <section id="work-history" className="py-20 px-4">
+      <section id="work-history" className="py-20 px-4 dark:bg-gray-900">
         <div className="max-w-7xl mx-auto">
           <ScrollAnimation>
             <header className="text-center mb-12">
-              <h2 className="text-4xl font-bold text-portfolio-dark mb-4">
+              <h2 className="text-4xl font-bold text-portfolio-dark dark:text-white mb-4">
                 Work History
               </h2>
-              <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+              <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
                 My professional journey and experience in the technology
                 industry.
               </p>
             </header>
           </ScrollAnimation>
+
           <div className="relative max-w-5xl mx-auto">
             <Timeline items={workExperience} />
           </div>
         </div>
       </section>
+
+      {/* Footer */}
       <Footer />
     </div>
   );

@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Loader } from "lucide-react";
+import { AspectRatio } from "@/components/ui/aspect-ratio";
+import { cn } from "@/lib/utils";
 
 const Index = () => {
   const navigate = useNavigate();
@@ -8,13 +10,31 @@ const Index = () => {
   const [isFadingOut, setIsFadingOut] = useState(false);
 
   useEffect(() => {
+    // Check if dark mode was previously enabled
+    const savedDarkMode = localStorage.getItem("darkMode") === "true";
+
+    if (savedDarkMode) {
+      document.documentElement.classList.add("dark");
+    }
+
+    // Implement proper security headers for CSP
+    const meta = document.createElement("meta");
+    meta.httpEquiv = "Content-Security-Policy";
+    meta.content =
+      "default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com;";
+    document.head.appendChild(meta);
+
     // Simulate loading time first
     const loadingTimeout = setTimeout(() => {
       setIsLoading(false);
     }, 3000);
 
     // Only start fade-out after loading is complete
-    return () => clearTimeout(loadingTimeout);
+    return () => {
+      clearTimeout(loadingTimeout);
+      // Clean up CSP meta tag when component unmounts
+      document.head.removeChild(meta);
+    };
   }, []);
 
   // Handle transition to home page after loading and animation
@@ -39,31 +59,60 @@ const Index = () => {
 
   return (
     <div
-      className={`min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-white to-gray-100 p-4 transition-opacity duration-500 ease-in-out ${
-        isFadingOut ? "opacity-0" : "opacity-100"
-      }`}
+      className={cn(
+        "min-h-screen flex flex-col items-center justify-center",
+        "bg-gradient-to-br from-portfolio-light via-white to-gray-100",
+        "dark:bg-gradient-to-br dark:from-gray-900 dark:via-gray-800 dark:to-black",
+        "p-4 transition-all duration-700 ease-in-out",
+        isFadingOut ? "opacity-0 blur-sm" : "opacity-100"
+      )}
     >
-      <div className="text-center max-w-3xl">
-        <h1 className="text-5xl sm:text-6xl font-bold text-portfolio-dark mb-6 animate-fade-in">
-          Hi, Welcome to my Portfolio
+      {/* Background decoration with animated gradient */}
+      <div className="absolute top-[10%] left-[10%] w-64 h-64 bg-portfolio-secondary dark:bg-portfolio-primary opacity-5 rounded-full blur-3xl animate-pulse"></div>
+      <div className="absolute bottom-[10%] right-[10%] w-80 h-80 bg-portfolio-primary dark:bg-portfolio-secondary opacity-5 rounded-full blur-3xl animate-pulse"></div>
+      <div className="absolute top-[40%] right-[30%] w-48 h-48 bg-portfolio-accent opacity-5 rounded-full blur-3xl animate-pulse"></div>
+
+      <div className="text-center max-w-4xl relative z-10">
+        <h1 className="text-5xl sm:text-7xl font-bold text-portfolio-dark dark:text-white mb-6 animate-fade-in">
+          <span className="text-portfolio-primary">Welcome</span> to my
+          Portfolio
         </h1>
-        <p className="text-xl text-gray-600 mb-12 animate-fade-in-delayed">
-          I'm a passionate developer showcasing my projects and experience
-        </p>
+
+        <div className="mb-12 overflow-hidden">
+          <p className="text-xl sm:text-2xl text-gray-600 dark:text-gray-300 animate-fade-in-delayed">
+            I'm a{" "}
+            <span className="font-semibold text-portfolio-secondary">
+              passionate developer
+            </span>{" "}
+            focused on creating{" "}
+            <span className="font-semibold text-portfolio-primary">secure</span>{" "}
+            and
+            <span className="font-semibold text-portfolio-accent">
+              {" "}
+              beautiful
+            </span>{" "}
+            applications
+          </p>
+        </div>
+
         {isLoading ? (
-          <div className="flex flex-col items-center animate-pulse">
-            <Loader className="h-12 w-12 text-portfolio-primary animate-spin" />
-            <p className="text-gray-500 mt-4">Loading amazing content...</p>
+          <div className="flex flex-col items-center mt-10">
+            <div className="relative">
+              <div className="absolute inset-0 bg-portfolio-primary opacity-20 rounded-full blur-md animate-ping"></div>
+              <Loader className="h-16 w-16 text-portfolio-primary animate-spin relative z-10" />
+            </div>
+            <p className="text-gray-500 dark:text-gray-400 mt-6 font-medium animate-pulse">
+              Securing and loading amazing content...
+            </p>
           </div>
         ) : (
-          <div className="text-portfolio-primary text-lg">
-            <p className="animate-pulse">Preparing your experience...</p>
+          <div className="text-portfolio-primary text-lg mt-10 glass-card p-6 rounded-xl backdrop-blur-sm bg-white/30 dark:bg-gray-800/30 border border-white/20 dark:border-gray-700/20">
+            <p className="animate-pulse dark:text-gray-300">
+              Preparing a secure experience...
+            </p>
           </div>
         )}
       </div>
-      {/* Background decoration with animated gradient */}
-      <div className="absolute top-20 left-20 w-64 h-64 bg-portfolio-primary opacity-5 rounded-full blur-3xl animate-pulse"></div>
-      <div className="absolute bottom-20 right-20 w-80 h-80 bg-portfolio-secondary opacity-5 rounded-full blur-3xl animate-pulse"></div>{" "}
     </div>
   );
 };
