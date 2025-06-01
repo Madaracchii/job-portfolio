@@ -36,24 +36,6 @@ const Projects = () => {
       tags: ["JavaScript", "API Integration", "CSS"],
       link: "#",
     },
-    {
-      id: 4,
-      title: "Portfolio Website",
-      description:
-        "A personal portfolio website built with React and Tailwind CSS to showcase projects and skills.",
-      image:
-        "https://images.unsplash.com/photo-1483058712412-4245e9b90334?auto=format&fit=crop&w=800&q=80",
-      tags: ["React", "Tailwind CSS", "Responsive Design"],
-      link: "#",
-    },
-    {
-      id: 5,
-      title: "Blog Platform",
-      description:
-        "A full-featured blog platform with a rich text editor, image uploads, comments, and user authentication.",
-      tags: ["Next.js", "PostgreSQL", "AWS S3"],
-      link: "#",
-    },
   ];
 
   return (

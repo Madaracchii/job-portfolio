@@ -12,30 +12,6 @@ const WorkHistory = () => {
       description:
         "Lead development of core components for Google Cloud Platform's web console. Improved performance by 40% and implemented key accessibility features.",
     },
-    {
-      id: 2,
-      title: "Facebook",
-      role: "Software Engineer",
-      date: "2018 - 2020",
-      description:
-        "Developed and maintained React components for Facebook's Ads Manager. Collaborated with UX designers to implement new features and improve user experience.",
-    },
-    {
-      id: 3,
-      title: "Amazon",
-      role: "Full Stack Developer",
-      date: "2016 - 2018",
-      description:
-        "Built and maintained microservices for Amazon's internal tools. Worked with AWS Lambda, DynamoDB, and Node.js to create scalable solutions.",
-    },
-    {
-      id: 4,
-      title: "Microsoft",
-      role: "Junior Developer",
-      date: "2014 - 2016",
-      description:
-        "Started career working on Microsoft's developer tools. Contributed to Visual Studio Code extensions and internal testing frameworks.",
-    },
   ];
 
   return (
