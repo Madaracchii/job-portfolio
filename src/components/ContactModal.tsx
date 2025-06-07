@@ -19,7 +19,7 @@ const ContactModal = ({ isOpen, onClose }: ContactModalProps) => {
       setMounted(true);
       document.body.style.overflow = "hidden";
       // Decode the email only when needed
-      setEmail("john.doe" + "@" + "example.com");
+      setEmail("loandraeig" + "@" + "gmail.com");
     } else {
       document.body.style.overflow = "auto";
       const timer = setTimeout(() => {
@@ -90,15 +90,15 @@ const ContactModal = ({ isOpen, onClose }: ContactModalProps) => {
         </div>
 
         <p className="text-gray-600 dark:text-gray-300 mb-6">
-          Feel free to reach out through any of these secure channels. I'll get
-          back to you as soon as possible.
+          Kumusta! Want to collaborate, say hi, or talk about tech? Let’s
+          connect!
         </p>
 
         <div className="space-y-4">
           <div
             onClick={() =>
               copyToClipboard(
-                "https://linkedin.com/in/yourusername",
+                "https://linkedin.com/in/andraei-lo-685488194",
                 "LinkedIn profile link"
               )
             }
@@ -111,7 +111,7 @@ const ContactModal = ({ isOpen, onClose }: ContactModalProps) => {
               <p className="text-sm text-gray-500 dark:text-gray-400">
                 LinkedIn
               </p>
-              <p className="font-medium dark:text-white">John Doe</p>
+              <p className="font-medium dark:text-white">Andraei Lo</p>
             </div>
             <Button variant="ghost" size="sm" className="text-xs">
               Copy
@@ -121,7 +121,7 @@ const ContactModal = ({ isOpen, onClose }: ContactModalProps) => {
           <div
             onClick={() =>
               copyToClipboard(
-                "https://github.com/yourusername",
+                "https://github.com/Madaracchii",
                 "GitHub profile link"
               )
             }
@@ -132,7 +132,7 @@ const ContactModal = ({ isOpen, onClose }: ContactModalProps) => {
             </div>
             <div className="flex-1">
               <p className="text-sm text-gray-500 dark:text-gray-400">GitHub</p>
-              <p className="font-medium dark:text-white">@johndoe</p>
+              <p className="font-medium dark:text-white">@Madaracchii</p>
             </div>
             <Button variant="ghost" size="sm" className="text-xs">
               Copy
@@ -148,7 +148,7 @@ const ContactModal = ({ isOpen, onClose }: ContactModalProps) => {
             </div>
             <div className="flex-1">
               <p className="text-sm text-gray-500 dark:text-gray-400">Phone</p>
-              <p className="font-medium dark:text-white">+1 234 567 8900</p>
+              <p className="font-medium dark:text-white">+63 945 819 4302</p>
             </div>
             <Button variant="ghost" size="sm" className="text-xs">
               Copy

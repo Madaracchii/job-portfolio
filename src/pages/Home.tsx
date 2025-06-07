@@ -5,6 +5,7 @@ import ProjectCard from "@/components/ProjectCard";
 import Timeline from "@/components/Timeline";
 import ScrollAnimation from "@/components/ScrollAnimation";
 import Footer from "@/components/Footer";
+import profileImage from "../assets/Lo Grad Pic.jpg";
 
 const Home = () => {
   const projects = [
@@ -59,15 +60,14 @@ const Home = () => {
             </div>
             <div className="w-48 h-48 rounded-full overflow-hidden border-4 border-portfolio-primary dark:border-portfolio-secondary shrink-0">
               <img
-                src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&w=300&h=300&q=80"
-                alt="John Doe"
+                src={profileImage}
+                alt="Andraei Lo"
                 className="w-full h-full object-cover"
               />
             </div>
           </div>
         </ScrollAnimation>
 
-        {/* Education and Skills side by side */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
           <ScrollAnimation delay="medium">
             <BentoGridItem

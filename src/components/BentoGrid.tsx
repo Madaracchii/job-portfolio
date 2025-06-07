@@ -26,7 +26,7 @@ export const BentoGridItem = ({
   return (
     <Card
       className={cn(
-        "overflow-hidden rounded-xl shadow-md transition-all border:dark hover:shadow-lg",
+        "overflow-hidden rounded-xl shadow-xl transition-all border:dark hover:shadow-2xl",
         className
       )}
     >
