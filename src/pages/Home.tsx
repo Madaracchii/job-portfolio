@@ -1,6 +1,6 @@
-import { Book, Code, School } from "lucide-react";
+import { Code, School } from "lucide-react";
 import Navigation from "@/components/Navigation";
-import { BentoGrid, BentoGridItem } from "@/components/BentoGrid";
+import { BentoGridItem } from "@/components/BentoGrid";
 import ProjectCard from "@/components/ProjectCard";
 import Timeline from "@/components/Timeline";
 import ScrollAnimation from "@/components/ScrollAnimation";

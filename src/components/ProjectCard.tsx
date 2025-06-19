@@ -9,7 +9,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { ExternalLink, Github, Eye } from "lucide-react";
+import { Github, Eye } from "lucide-react";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 
 interface ProjectCardProps {
