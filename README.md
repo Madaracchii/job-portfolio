@@ -1,54 +1,55 @@
-# React + TypeScript + Vite
+# My Dev Portfolio – Isang Kwento ng Isang Pilipinong Developer
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+🌐 [Visit my portfolio](job-portfolio.pages.dev)
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Mabuhay! 👋 Welcome to my personal developer portfolio, where code meets creativity and kultura. This project is not just a collection of HTML, CSS, and JavaScript. It's a digital *kwento* (story) of my journey as an aspiring Filipino developer and programmer.
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 🔍 About the Project
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+This is my official portfolio website, built with modern web technologies to showcase:
+- ✨ My projects and open-source contributions
+- 👨‍💻 My skills in full-stack/web development
+- 📜 My developer story with a Filipino soul
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+I built this site with performance, responsiveness, and accessibility in mind—plus a touch of *Pinoy pride*.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+---
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+## 🛠 Tech Stack
+
+Built with:
+- ⚛️ **React** – for the snappy, component-based UI
+- 🎨 **Tailwind CSS** – for rapid, utility-first styling
+- ⚡ **Vite** – for blazing-fast development and build
+- 🌗 **Dark Mode** – because developers love options
+- 🛡️ **Best practices** in security and optimization
+
+Optional extras (used or coming soon):
+- 🌐 Multi-language support (including Filipino 🇵🇭)
+- 🔥 WebGL particle effects (para astig tingnan)
+
+---
+
+## 🎯 My Goal
+
+As a Filipino developer, I aim to represent the talent, creativity, and resilience of the **tech community in the Philippines**. This site is a stepping stone toward open collaboration, freelancing opportunities, and inspiring fellow *kababayan* in tech.
+
+---
+
+## Pinoy Vibes
+
+I take pride in integrating Filipino elements where possible—whether in design, copywriting, or overall feel. *Simple, maayos, at may puso.*
+
+---
+
+## 📸 Preview
+
+![image](https://github.com/user-attachments/assets/3516241e-8a73-4398-a662-e29d17c0a5aa)
+
+---
+
+
+
